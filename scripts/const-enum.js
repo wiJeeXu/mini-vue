@@ -13,7 +13,7 @@ export function scanEnums() {
   const enumData = {
     ranges: {},
     defines: {},
-    ids: {}
+    ids: []
   }
   const { stdout } = execaSync('git', ['grep', `export const enum`])
   const files = [...new Set(stdout.split('\n').map(line => line.split(':')[0]))]
@@ -127,7 +127,7 @@ export function scanEnums() {
     }
   }
   if (!existsSync('temp')) mkdirSync('temp')
-  writeFileSync(ENUM_CACHE_PATH, enumData)
+  writeFileSync(ENUM_CACHE_PATH, JSON.stringify(enumData))
 
   return () => {
     rmSync(ENUM_CACHE_PATH, { force: true })
