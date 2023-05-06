@@ -8,7 +8,7 @@ const entries = {}
 const resolveEntryForPkg = p =>
   path.resolve(
     fileURLToPath(import.meta.url),
-    `../../packages/${p}/src/index.ts`
+    `../../packages/${p}/src/index.js`
   )
 
 for (const dir of dirs) {
