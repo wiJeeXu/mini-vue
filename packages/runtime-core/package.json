@@ -8,5 +8,9 @@
   "license": "ISC",
   "engines": {
     "node": ">=16.11.0"
+  },
+  "dependencies": {
+    "@vue/shared": "1.0.0",
+    "@vue/reactivity": "1.0.0"
   }
 }

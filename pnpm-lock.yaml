@@ -20,6 +20,28 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(esbuild@0.17.18)(rollup@3.21.0)
 
+  packages/reactivity: {}
+
+  packages/runtime-core:
+    dependencies:
+      '@vue/reactivity':
+        specifier: 1.0.0
+        version: link:../reactivity
+      '@vue/shared':
+        specifier: 1.0.0
+        version: link:../shared
+
+  packages/runtime-dom:
+    dependencies:
+      '@vue/runtime-core':
+        specifier: 1.0.0
+        version: link:../runtime-core
+      '@vue/shared':
+        specifier: 1.0.0
+        version: link:../shared
+
+  packages/shared: {}
+
 packages:
 
   /@esbuild/android-arm64@0.17.18:
